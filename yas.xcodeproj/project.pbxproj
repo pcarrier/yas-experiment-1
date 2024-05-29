@@ -8,16 +8,58 @@
 
 /* Begin PBXBuildFile section */
 		4FDBA4422C07865C00462126 /* yas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDBA4412C07865C00462126 /* yas.swift */; };
+		4FE31BE82C0839B600462126 /* yasd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE31BE72C0839B600462126 /* yasd.swift */; };
+		4FE31BEA2C0839B600462126 /* yasdProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE31BE92C0839B600462126 /* yasdProtocol.swift */; };
+		4FE31BEC2C0839B600462126 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE31BEB2C0839B600462126 /* main.swift */; };
+		4FE31BFA2C083C3600462126 /* tools.yas.yasd.plist in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 4FE31BF82C083B1D00462126 /* tools.yas.yasd.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4FE31BEF2C0839B600462126 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FDBA4362C07865C00462126 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FE31BE42C0839B600462126;
+			remoteInfo = yasd;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4FE31BF52C0839B600462126 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchDaemons;
+			dstSubfolderSpec = 1;
+			files = (
+				4FE31BFA2C083C3600462126 /* tools.yas.yasd.plist in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		4FDBA43E2C07865C00462126 /* yas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FDBA43E2C07865C00462126 /* YAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDBA4412C07865C00462126 /* yas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yas.swift; sourceTree = "<group>"; };
 		4FDBA44A2C07865F00462126 /* yas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = yas.entitlements; sourceTree = "<group>"; };
+		4FE31BE52C0839B600462126 /* yasd.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = yasd.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FE31BE72C0839B600462126 /* yasd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yasd.swift; sourceTree = "<group>"; };
+		4FE31BE92C0839B600462126 /* yasdProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yasdProtocol.swift; sourceTree = "<group>"; };
+		4FE31BEB2C0839B600462126 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4FE31BED2C0839B600462126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FE31BEE2C0839B600462126 /* yasd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = yasd.entitlements; sourceTree = "<group>"; };
+		4FE31BF82C083B1D00462126 /* tools.yas.yasd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = tools.yas.yasd.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4FDBA43B2C07865C00462126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FE31BE22C0839B600462126 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -30,7 +72,9 @@
 		4FDBA4352C07865C00462126 = {
 			isa = PBXGroup;
 			children = (
+				4FE31BF82C083B1D00462126 /* tools.yas.yasd.plist */,
 				4FDBA4402C07865C00462126 /* yas */,
+				4FE31BE62C0839B600462126 /* yasd */,
 				4FDBA43F2C07865C00462126 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,7 +82,8 @@
 		4FDBA43F2C07865C00462126 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4FDBA43E2C07865C00462126 /* yas.app */,
+				4FDBA43E2C07865C00462126 /* YAS.app */,
+				4FE31BE52C0839B600462126 /* yasd.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,25 +97,55 @@
 			path = yas;
 			sourceTree = "<group>";
 		};
+		4FE31BE62C0839B600462126 /* yasd */ = {
+			isa = PBXGroup;
+			children = (
+				4FE31BE72C0839B600462126 /* yasd.swift */,
+				4FE31BE92C0839B600462126 /* yasdProtocol.swift */,
+				4FE31BEB2C0839B600462126 /* main.swift */,
+				4FE31BED2C0839B600462126 /* Info.plist */,
+				4FE31BEE2C0839B600462126 /* yasd.entitlements */,
+			);
+			path = yasd;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4FDBA43D2C07865C00462126 /* yas */ = {
+		4FDBA43D2C07865C00462126 /* YAS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FDBA44D2C07865F00462126 /* Build configuration list for PBXNativeTarget "yas" */;
+			buildConfigurationList = 4FDBA44D2C07865F00462126 /* Build configuration list for PBXNativeTarget "YAS" */;
 			buildPhases = (
 				4FDBA43A2C07865C00462126 /* Sources */,
 				4FDBA43B2C07865C00462126 /* Frameworks */,
-				4FDBA43C2C07865C00462126 /* Resources */,
+				4FE31BF52C0839B600462126 /* Embed XPC Services */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FE31BF02C0839B600462126 /* PBXTargetDependency */,
+			);
+			name = YAS;
+			productName = yas;
+			productReference = 4FDBA43E2C07865C00462126 /* YAS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4FE31BE42C0839B600462126 /* yasd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FE31BF22C0839B600462126 /* Build configuration list for PBXNativeTarget "yasd" */;
+			buildPhases = (
+				4FE31BE12C0839B600462126 /* Sources */,
+				4FE31BE22C0839B600462126 /* Frameworks */,
+				4FE31BE32C0839B600462126 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = yas;
-			productName = yas;
-			productReference = 4FDBA43E2C07865C00462126 /* yas.app */;
-			productType = "com.apple.product-type.application";
+			name = yasd;
+			productName = yasd;
+			productReference = 4FE31BE52C0839B600462126 /* yasd.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +158,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					4FDBA43D2C07865C00462126 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					4FE31BE42C0839B600462126 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -100,13 +178,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4FDBA43D2C07865C00462126 /* yas */,
+				4FDBA43D2C07865C00462126 /* YAS */,
+				4FE31BE42C0839B600462126 /* yasd */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4FDBA43C2C07865C00462126 /* Resources */ = {
+		4FE31BE32C0839B600462126 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,7 +203,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4FE31BE12C0839B600462126 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FE31BEA2C0839B600462126 /* yasdProtocol.swift in Sources */,
+				4FE31BE82C0839B600462126 /* yasd.swift in Sources */,
+				4FE31BEC2C0839B600462126 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FE31BF02C0839B600462126 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FE31BE42C0839B600462126 /* yasd */;
+			targetProxy = 4FE31BEF2C0839B600462126 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4FDBA44B2C07865F00462126 /* Debug */ = {
@@ -164,7 +261,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -227,7 +324,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -248,9 +345,11 @@
 		4FDBA44E2C07865F00462126 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = yas/yas.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -260,7 +359,7 @@
 				ENABLE_PREVIEWS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = YAS;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSUIElement = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -276,9 +375,11 @@
 		4FDBA44F2C07865F00462126 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = yas/yas.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -288,7 +389,7 @@
 				ENABLE_PREVIEWS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = YAS;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSUIElement = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -296,6 +397,54 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tools.yas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4FE31BF32C0839B600462126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = yasd/yasd.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85BMMCPDCG;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = yasd/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = yasd;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tools.yas.yasd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4FE31BF42C0839B600462126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = yasd/yasd.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85BMMCPDCG;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = yasd/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = yasd;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tools.yas.yasd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -313,11 +462,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FDBA44D2C07865F00462126 /* Build configuration list for PBXNativeTarget "yas" */ = {
+		4FDBA44D2C07865F00462126 /* Build configuration list for PBXNativeTarget "YAS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FDBA44E2C07865F00462126 /* Debug */,
 				4FDBA44F2C07865F00462126 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FE31BF22C0839B600462126 /* Build configuration list for PBXNativeTarget "yasd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FE31BF32C0839B600462126 /* Debug */,
+				4FE31BF42C0839B600462126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
